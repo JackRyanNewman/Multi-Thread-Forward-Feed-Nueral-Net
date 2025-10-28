@@ -42,3 +42,4 @@ The program includes a variety of configurable flags for precise control over ne
 - `-w <DOUBLE>`: Weight initialization value ϵ (default: 0.1).  
 - `-v <INTEGER>`: Verbosity level; 0 = near silent, 1 = default, higher values for detailed logging.  
 - `-p <BOOLEAN>`: Enables optional threaded
+- `% <byte>`: batch size divisor. batchSize= (dataSet*.8)/ batchSzDiv. -1 is default, which is off, 0 is full batch.
