@@ -1,0 +1,40 @@
+Jack Newman
+Date: 11-4-2024
+For viewing best reading experience expand window till you reach end of =.  
+=================================================================================================================================================
+Completion Status: 
+  1. Main Requirements: Fully Complete
+Extra
+  2. Extra Credit Option 1: Fully Complete
+  3. Custom diagrams to represent my data structure and I redid neural net diagram: See my reference folder.
+  4. Parallelized Implementation: Mini-batches, accuracies, and loss can be calculated in parallel. 
+   4.1 Linear Implementation: Alternative to parallelized implementation.
+  5. parallelized network runner: Special methods that generates multiple network configurations and then runs them in parallel or linearly. Furthermore, its results can stored in a file and printed to console. It can train over 500 networks in over 3 minutes! 
+  6. Custom flags. 
+   6.1 -p <boolean> allows you to do #4. Default is off. 
+   6.2 -% <byte>: batch size divisor. batchSize= (dataSet*.8)/ batchSzDiv. -1 is default, which is off, 0 is full batch.
+  7. Modfied flags: verbsoity now has option 0, which is near silent for maximum speed, and also used in #5. 
+  8. Java Experimentation: This is a folder full of java classes I made, that were apart of my optimization and learning process. From that 
+     I discovered more functional coding type methods in java, learned more about parallization, java compiler specifics, and pushed my 
+     understanding of how to manipulate the cache and memory more. 
+  9. Optimized: Low ball its 3-5 times faster than the example implmentations speed. This is not considering parallelization. I will briefly list some bellow. 
+  	 1. Architecture: My network is constructed in layers, each layer holds a set of "nuerons", and each nueron holds a set of weights that create the neurons inj. The aj of that neuron is stored in the next layer as the inj. With this set up, 
+  	 	  you can take full advance of parallel arrays. Each neurons set of wieghts will in order map to each inj, and the position of the neuron will map to the location of where the aj should be stored in the next layer. Calculating the gradient becomes simple as well. 
+  	 2. When reading in the data, I only create one column for output. In that colummn I store the index of it where it was located, which then will map to the index of the neuron that should be outputting 1 in the output layer. 
+  	 3. I technically don't have an "input and output" layer, rather, the input layer is just the first hidden layer, or it is the output layer.   
+  	 	  
+		
+
+Using #1: Its a eclipse java project, files are in SRC. The main class is called NeuralNetWorkController and that's where you can feed it the inputs via command line or an external class. The filing pathing for it is not tied to anything specific. 
+
+Using #5: Call from main and do not pass args. Its dependent on the data being in my data folder. How it works is i made a class called HPT, which holds an inner class of default information that I use dymnically build arguments to run en masse. Because the file locations are grabbed from static information, this part of the program relies on the files existing within my data folder. You will have to read into the code on how to use it. 
+
+=================================================================================================================================================
+Other Folders and files: 
+	SRC: Java files to run program. 
+	00-References: Assignment documentation, and referenced lectures, and diagrams. 
+	a03-data: Where I store my data, program for file pathing is not necessarily tied to this unless you are using the testing file. 
+	Experimentation: Where I write the required experimentation notes. 
+
+
+=================================================================================================================================================

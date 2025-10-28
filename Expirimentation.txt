@@ -1,0 +1,42 @@
+Jack Newman
+Date: 2024-12-4: Assigment 3. 
+
+Hyperamaters notes: 
+	Rules of thumb: 
+		1. Start with small alpha: Smaller stepsizes can lead to smaller mistakes, and might help you weed out bad set ups. 
+		2. Scale alpha to epoch limit: You can compenseate the lack of progress of small steps by increasing alpha. 
+	  3. Do you research: When designing a neural network and tuning its hyperparameters, it’s important to consider the nature of the input data and how it might influence the architecture. 
+	  For example, when dealing with images that have many small, intricate details, such as high-resolution textures, the initial hidden layers may need to be smaller. 
+	  This allows the network to focus on the most distinctive features at a fine-grained level. 
+	  On the other hand, when working with images that are zoomed out or have fewer key features spread across larger regions, the network might benefit from larger hidden layers, which can capture broader patterns and relationships. 
+	  In general, the architecture of a neural network should be tailored to how much detail is available in the input data and the level at which features are most relevant.
+	  4. Play with extremes: Test out differnt extreme sizes, like a very tall but short network vs a thin but wide network, or a balanced network. 
+	Methodolgy: 
+	  My general methodolgy was play with extremes, if you check my HP file you can see what im doing. But essestinally, I create a set of networks, and then choose from 3 different sets that determines there width. 
+	  Each set has two values, and even and odd pair off by one, and then pair of the same values. The last set is has a largest even odd difference of 5. To make unique sets, I grab a size, and a pair and repeat its values until i reach the size. 
+	  Then I also make skinny and tall network. Then I take that list, and then make an even larger unique list by combining them wwith other hyperparmeters. Then I print values that only have train accuarcy that are not equal to zero. Then I would find a 
+	  general trend, and then started editing my generation set up. Mentally mark down what does and doesnt work. Then if i will go over my network tester class and then start indivually doing guesses. 
+	 
+		Learned: 
+			The score kinda deafulats to 20% as its max, and a large range of networks hang around in this postion, 
+			To get any sort of varience for your trraining accuarcy you need randoimziation, however that doesnt change the validation accuarcy at all. 
+		
+	
+	
+Best Scores andd hyperparamters: 
+	mnist.dat: Any slight variation within works incrieibly well! 
+ 		1. 93% Train and Val ACC. -v 3 -h 2 70 175 -e 100 -w 0.1 -l 0.0001 -a 0.04 -r
+	image-05.dat
+ 		1. 20ish%: -e 500 -a 0.005 -l 0.0 -w 0.01 -% 0 -h 2 2 3
+	image-10.dat
+		1. 21% -e 500 -a 0.005 -l 0.0 -w 0.05 -% 0 -h 2 2 3 -r
+		2. 22% -e 500 -a 0.005 -l 0.0 -w 0.05 -% 50 -h 2 2 3 -r
+	image-15.dat
+		1. 23%   -e 1000 -a 0.005 -l 0.005 -w 0.1 -% 0 -h 3 20 15 10 -r
+	  2. 22.5% -e 500 -a 0.005 -l 0.01 -w 0.1 -% 50 -h 8 5 15 5 15 5 15 5 15 -r
+	image-20.dat
+		1. 21% -e 500 -a 0.01 -l 0.0 -w 0.05 -% 50 -h 8 5 15 5 15 5 15 5 15
+		2 .24% -e 500 -a 0.01 -l 0.005 -w 0.1 -% 50 -h 3 100 50 25 -r
+
+Looking back, I think all of image.dat would benfit from tall short networks. Where the first hidden layer is like 5-10% smaller than the first input layer, and then it halfs, and halfs. Then stops. 
+If I had more time, im pretty sure I could raise it by 5-10%, but I spent enough time on paralization and other features. Alot of my testing was intilally brute force testing. 
