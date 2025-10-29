@@ -43,3 +43,6 @@ The program includes a variety of configurable flags for precise control over ne
 - `-v <INTEGER>`: Verbosity level; 0 = near silent, 1 = default, higher values for detailed logging.  
 - `-p <BOOLEAN>`: Enables optional threaded
 - `% <byte>`: batch size divisor. batchSize= (dataSet*.8)/ batchSzDiv. -1 is default, which is off, 0 is full batch.
+
+
+##READ 00-References\0-assignment-03.pdf For more info
