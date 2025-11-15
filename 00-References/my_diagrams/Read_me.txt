@@ -1,0 +1,3 @@
+This diagram was made only for me, as abstract way to view the flow of my data, and is not your typical modeling system.
+
+While it may look like things are linked via connections, the whole architecture of my neural net is designed for optimization. The only array of objects is my layer objects. Each layer object, holds references to double arrays, PrevJ, Weights(Neurons), and Inj. You can use some pretty simple relationships and parallel arrays to avoid complex computations and get nice speed ups. 
